@@ -14,6 +14,8 @@ Filters
 
   - :ref:`check-permissions <aws.common.filters.check-permissions>`
   
+  - :ref:`check-xray-tracing-enabled <aws.common.filters.check-xray-tracing-enabled>`
+  
   - :ref:`config-compliance <aws.common.filters.config-compliance>`
   
   - :ref:`cross-account <aws.lambda.filters.cross-account>`
@@ -582,6 +584,8 @@ Actions
   
   - :ref:`delete <aws.lambda.actions.delete>`
 
+  - :ref:`enable-xray-tracing <aws.lambda.actions.enable-xray-tracing>`
+
   - :ref:`invoke-lambda <aws.common.actions.invoke-lambda>`
   
   - :ref:`invoke-sfn <aws.common.actions.invoke-sfn>`
@@ -652,6 +656,39 @@ Delete a lambda function (including aliases and older versions).
 
 
 Permissions - lambda:DeleteFunction
+
+
+.. _aws.lambda.actions.enable-xray-tracing:
+
+enable-xray-tracing
++++++++++++++++++++
+ This action allows for enable Xray tracing to Active
+:example:
+.. code-block:: yaml
+    actions:
+      - type: enable-xray-tracing
+
+.. container:: toggle
+
+  
+
+  .. raw:: html
+     
+    <div class="header docutils container" style=""></div>
+
+  .. code-block:: yaml
+
+    properties:
+      type:
+        enum:
+        - enable-xray-tracing
+    required:
+    - type
+
+
+
+
+Permissions - lambda:UpdateFunctionConfiguration
 
 
 .. _aws.lambda.actions.remove-statements:

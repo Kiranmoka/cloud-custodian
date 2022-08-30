@@ -12,6 +12,9 @@ Filters
    - :ref:`check-permissions <AWS.common.filters.check-permissions>`
 
 
+   - :ref:`check-xray-tracing-enabled <AWS.common.filters.check-xray-tracing-enabled>`
+
+
    - :ref:`client-properties <AWS.common.filters.client-properties>`
 
 
@@ -281,6 +284,39 @@ By default permission boundaries are checked.
     required:
     - actions
     - match
+
+
+
+.. _AWS.common.filters.check-xray-tracing-enabled:
+
+check-xray-tracing-enabled
+++++++++++++++++++++++++++
+
+Filters lambda functions with xray tracing not enabled
+
+:example:
+
+.. code-block:: yaml
+
+        filters:
+          - type: check-xray-tracing-enabled
+
+.. container:: toggle
+
+  
+
+  .. raw:: html
+     
+    <div class="header docutils container" style=""></div>
+
+  .. code-block:: yaml
+
+    properties:
+      type:
+        enum:
+        - check-xray-tracing-enabled
+    required:
+    - type
 
 
 
