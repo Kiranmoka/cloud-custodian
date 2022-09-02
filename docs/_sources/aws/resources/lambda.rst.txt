@@ -14,8 +14,6 @@ Filters
 
   - :ref:`check-permissions <aws.common.filters.check-permissions>`
   
-  - :ref:`check-xray-tracing-enabled <aws.common.filters.check-xray-tracing-enabled>`
-  
   - :ref:`config-compliance <aws.common.filters.config-compliance>`
   
   - :ref:`cross-account <aws.lambda.filters.cross-account>`
