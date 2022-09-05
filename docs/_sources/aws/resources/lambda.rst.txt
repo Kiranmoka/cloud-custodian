@@ -582,8 +582,6 @@ Actions
   
   - :ref:`delete <aws.lambda.actions.delete>`
 
-  - :ref:`enable-xray-tracing <aws.lambda.actions.enable-xray-tracing>`
-
   - :ref:`invoke-lambda <aws.common.actions.invoke-lambda>`
   
   - :ref:`invoke-sfn <aws.common.actions.invoke-sfn>`
@@ -605,6 +603,8 @@ Actions
   - :ref:`remove-tag <aws.common.actions.remove-tag>`
   
   - :ref:`set-concurrency <aws.lambda.actions.set-concurrency>`
+
+  - :ref:`set-xray-tracing <aws.lambda.actions.set-xray-tracing>`
 
   - :ref:`tag <aws.common.actions.tag>`
   
@@ -654,39 +654,6 @@ Delete a lambda function (including aliases and older versions).
 
 
 Permissions - lambda:DeleteFunction
-
-
-.. _aws.lambda.actions.enable-xray-tracing:
-
-enable-xray-tracing
-+++++++++++++++++++
- This action allows for enable Xray tracing to Active
-:example:
-.. code-block:: yaml
-    actions:
-      - type: enable-xray-tracing
-
-.. container:: toggle
-
-  
-
-  .. raw:: html
-     
-    <div class="header docutils container" style=""></div>
-
-  .. code-block:: yaml
-
-    properties:
-      type:
-        enum:
-        - enable-xray-tracing
-    required:
-    - type
-
-
-
-
-Permissions - lambda:UpdateFunctionConfiguration
 
 
 .. _aws.lambda.actions.remove-statements:
@@ -777,6 +744,42 @@ the resource.
 
 
 Permissions - lambda:DeleteFunctionConcurrency, lambda:PutFunctionConcurrency
+
+
+.. _aws.lambda.actions.set-xray-tracing:
+
+set-xray-tracing
+++++++++++++++++
+ This action allows for enable Xray tracing to Active
+:example:
+.. code-block:: yaml
+    actions:
+      - type: enable-xray-tracing
+
+.. container:: toggle
+
+  
+
+  .. raw:: html
+     
+    <div class="header docutils container" style=""></div>
+
+  .. code-block:: yaml
+
+    properties:
+      state:
+        default: true
+        type: boolean
+      type:
+        enum:
+        - set-xray-tracing
+    required:
+    - type
+
+
+
+
+Permissions - lambda:UpdateFunctionConfiguration
 
 
 .. _aws.lambda.actions.trim-versions:
